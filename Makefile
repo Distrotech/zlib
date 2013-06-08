@@ -27,8 +27,8 @@ CFLAGS=-O3  -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
 SFLAGS=-O3  -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
 LDFLAGS= 
 TEST_LDFLAGS=-L. libz.a
-LDSHARED=gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
-CPP=gcc -E
+LDSHARED=$(CC) -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+CPP=$(CC) -E
 
 STATICLIB=libz.a
 SHAREDLIB=libz.so
